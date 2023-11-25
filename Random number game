@@ -1,50 +1,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
 int main() {
     int numberToGuess, userGuess, attempts = 0;
-
     // Seed for generating random numbers
     srand(time(0));
-
     // Generate a random number between 1 and 100
     numberToGuess = rand() % 100 + 1;
-
     printf("Welcome to the Number Guessing Game!\n");
     printf("!!!!  Try to guess the number between 1 and 100 !!!!\n");
-
     do {
         // Get user input
         printf("Enter your guess: ");
         scanf("%d", &userGuess);
-
         // Increment attempts
         attempts++;
-
         // Check if the guess is correct
         if (userGuess == numberToGuess) {
-            printf("Congratulations! You guessed the number in %d attempts.\n", attempts);
+            printf("\n\n\n******   Congratulations! You guessed the number in %d attempts.   ******\n", attempts);
         } else if (userGuess < numberToGuess) {
-            printf("Try a higher number.\n");
+            printf("_____Try a higher number._____\n");
         } else {
-            printf("Try a lower number.\n");
+            printf("_____Try a lower number._____\n");
         }
-
     } while (userGuess != numberToGuess);
-
     if(attempts<=10)
     {
-        printf("You are very good at guessing. Run the program and try again.");
+        printf("\n\n\n******   You are very good at guessing.   ******\n\n\n");
     }
     else if(attempts<=20 && attempts>10)
     {
-        printf("You just needed %d attempts to be excellent", attempts-10);
+        printf("\n\n\n******   You just needed %d attempts to be excellent   ******\n\n\n", attempts-10);
     }
     else
     {
-        printf("You can be better");
+        printf("\n\n\n******   You can be better.   ******\n\n\n");
     }
-
     return 0;
 }
